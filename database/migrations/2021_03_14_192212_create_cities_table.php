@@ -15,7 +15,16 @@ class CreateCitiesTable extends Migration
     {
         Schema::create('cities', function (Blueprint $table) {
             $table->id();
+            //$table->integer('id');
+
+            $table->string('region')->nullable();
+            $table->string('city');
+            $table->string('slug')->unique();
+
+            $table->integer('trip_days')->unsigned();
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

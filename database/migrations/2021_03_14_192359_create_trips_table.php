@@ -15,7 +15,18 @@ class CreateTripsTable extends Migration
     {
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
+
+            $table->integer('courier_id')->unsigned();
+            $table->integer('city_id')->unsigned();
+
+            $table->date('start_date');
+            $table->date('finish_date');
+
             $table->timestamps();
+            $table->softDeletes();
+
+            $table->foreign('courier_id')->references('id')->on('couriers');
+            $table->foreign('city_id')->references('id')->on('cities');
         });
     }
 
