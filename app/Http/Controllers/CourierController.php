@@ -14,8 +14,10 @@ class CourierController extends Controller
      */
     public function index()
     {
+        echo '<a href="/">Все поездки</a><br>';
+        echo '<a href="">Добавить курьера</a>';
         echo '<h1>Список всех курьеров</h1>';
-        echo Courier::all();
+        dump(Courier::all());
     }
 
     /**
