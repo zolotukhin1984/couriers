@@ -16,8 +16,8 @@ class CreateTripsTable extends Migration
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
 
-            $table->integer('courier_id')->unsigned();
-            $table->integer('city_id')->unsigned();
+            $table->unsignedBigInteger('courier_id');
+            $table->unsignedBigInteger('city_id');
 
             $table->date('start_date');
             $table->date('finish_date');
