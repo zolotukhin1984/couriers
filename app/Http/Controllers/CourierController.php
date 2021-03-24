@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Courier;
 use Illuminate\Http\Request;
 
-class RestTestController extends Controller
+class CourierController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class RestTestController extends Controller
      */
     public function index()
     {
-        //
+        echo '<h1>Список всех курьеров</h1>';
+        echo Courier::all();
     }
 
     /**
