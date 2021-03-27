@@ -2,16 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Courier;
 use Illuminate\Http\Request;
 
-class CourierController extends Controller
+class TripController extends Controller
 {
-    public function __construct(Request $request)
-    {
-        dump($request->route()->getName());
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +13,7 @@ class CourierController extends Controller
      */
     public function index()
     {
-        return view('couriers.index');
+        //
     }
 
     /**
@@ -29,7 +23,7 @@ class CourierController extends Controller
      */
     public function create()
     {
-        return view('couriers.create');
+        //
     }
 
     /**
@@ -40,7 +34,7 @@ class CourierController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+        //
     }
 
     /**
@@ -51,7 +45,7 @@ class CourierController extends Controller
      */
     public function show($id)
     {
-        return "Courier # $id";
+        //
     }
 
     /**
@@ -62,20 +56,19 @@ class CourierController extends Controller
      */
     public function edit($id)
     {
-        return view('couriers.edit', ['id' => $id]);
+        //
     }
 
     /**
      * Update the specified resource in storage.
-     *x
+     *
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        dump($id);
-        dd($request);
+        //
     }
 
     /**
@@ -86,7 +79,6 @@ class CourierController extends Controller
      */
     public function destroy($id)
     {
-        dump(__METHOD__);
-        dd($id);
+        //
     }
 }
