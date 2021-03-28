@@ -11,7 +11,11 @@
     <h1>Add courier</h1>
     <form action="{{ route('couriers.store') }}" method="post">
         @csrf
-        <input type="text" name="title">
+        @method('post')
+        <label for="name">Name: </label><input type="text" name="name" id="name">
+        <br>
+        <label for="surname">Surnme: </label><input type="text" name="surname" id="surname">
+        <br>
         <button type="submit">Submit</button>
     </form>
 </body>

@@ -8,7 +8,11 @@
     <title>Couriers | Trips</title>
 </head>
 <body>
+    <p>
+        <a href="{{ route(('couriers.create')) }}">Add new courier</a>
+    </p>
     <h1>Courier List</h1>
+{{--    {{ dd($couriers) }}--}}
     <ul>
         <li>
             <a href="{{ route('couriers.show', ['courier' => 1]) }}">Jack</a> |

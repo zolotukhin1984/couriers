@@ -7,10 +7,10 @@ use Illuminate\Http\Request;
 
 class CourierController extends Controller
 {
-    public function __construct(Request $request)
+/*    public function __construct(Request $request)
     {
         dump($request->route()->getName());
-    }
+    }*/
 
     /**
      * Display a listing of the resource.
@@ -19,7 +19,8 @@ class CourierController extends Controller
      */
     public function index()
     {
-        return view('couriers.index');
+        $couriers = Courier::all();
+        return view('couriers.index', ['couriers' => $couriers]);
     }
 
     /**
@@ -40,7 +41,16 @@ class CourierController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request);
+//        return $request->all()['name'];
+//        die;
+        $query = new Courier();
+        $query->name = $request->all()['name'];
+        $query->surname = $request->all()['surname'];
+        $query->slug = time();
+        $query->save();
+        //dump($query);die;
+        //var_dump($query);die;
+        return view('couriers.index');
     }
 
     /**

@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Courier extends Model
 {
     use HasFactory;
+
+    /**
+     * @var integer
+     */
+    public $id;
+
+//    /**
+//     * @var string
+//     */
+//    public $name;
 }

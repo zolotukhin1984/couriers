@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CourierController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PageController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+//Route::get('/', MainController::class);
 
-Route::resource('/couriers', 'App\Http\Controllers\CourierController');
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/page/about', [PageController::class, 'show'])->name('page.about');
 
+Route::resource('/couriers', CourierController::class);
