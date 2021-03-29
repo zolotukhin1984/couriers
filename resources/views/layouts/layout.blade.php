@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -9,7 +8,7 @@
     <meta name="generator" content="Hugo 0.82.0">
     <title>
         @section('title')
-            1-st Courier Company
+            {{ $title }}  | 1st Courier Company
         @show
     </title>
 

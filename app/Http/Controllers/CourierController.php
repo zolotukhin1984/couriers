@@ -20,7 +20,8 @@ class CourierController extends Controller
     public function index()
     {
         $couriers = Courier::all();
-        return view('couriers.index', ['couriers' => $couriers]);
+        $title = 'Couriers list';
+        return view('couriers.index', ['couriers' => $couriers, 'title' => $title]);
     }
 
     /**

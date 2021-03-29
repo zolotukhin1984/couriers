@@ -8,6 +8,7 @@ class PageController extends Controller
 {
     public function show()
     {
-        return view('pages.about');
+        $title = 'About';
+        return view('pages.about', compact('title'));
     }
 }

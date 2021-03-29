@@ -1,9 +1,5 @@
 @extends('layouts.layout')
 
-@section('title')
-    Home Page | @parent
-@endsection
-
 @section('content')
     <section class="py-5 text-center container">
         <div class="row py-lg-5">

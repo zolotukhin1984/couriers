@@ -1,18 +1,43 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Couriers | Trips</title>
-</head>
-<body>
+@extends('layouts.layout')
+
+@section('content')
     <p>
         <a href="{{ route(('couriers.create')) }}">Add new courier</a>
     </p>
-    <h1>Courier List</h1>
-{{--    {{ dd($couriers) }}--}}
+
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light">Courier List</h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-1 g-3">
+                @foreach($couriers as $courier)
+                <div class="col" style="background: gray">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <p class="card-text">
+                                {{ $courier->name . ' ' . $courier->surname }}
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+                                <small class="text-muted">9 mins</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                @endforeach
+            </div>
+        </div>
+    </div>
+
     <ul>
         <li>
             <a href="{{ route('couriers.show', ['courier' => 1]) }}">Jack</a> |
@@ -44,5 +69,4 @@
 
         </li>
     </ul>
-</body>
-</html>
+@endsection
