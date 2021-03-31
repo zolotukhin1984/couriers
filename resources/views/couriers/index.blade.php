@@ -2,7 +2,7 @@
 
 @section('content')
     <p>
-        <a href="{{ route(('couriers.create')) }}">Add new courier</a>
+        <a class="btn btn-sm btn-outline-secondary" href="{{ route(('couriers.create')) }}">Add new courier</a>
     </p>
 
     <section class="py-5 text-center container">
@@ -16,17 +16,22 @@
     <div class="album py-5 bg-light">
         <div class="container">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-1 g-3">
+
                 @foreach($couriers as $courier)
                 <div class="col" style="background: gray">
                     <div class="card shadow-sm">
                         <div class="card-body">
                             <p class="card-text">
-                                {{ $courier->name . ' ' . $courier->surname }}
+                                <a href="{{ route('couriers.show', ['courier' => $courier->id]) }}">{{ $courier->name . ' ' . $courier->surname }}</a>
                             </p>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="btn-group">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                    <a class="btn btn-sm btn-outline-secondary" href="{{ route('couriers.edit', ['courier' => $courier->id]) }}">
+                                        Edit
+                                    </a>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary" style="color: white; background: red;">
+                                        Delete
+                                    </button>
                                 </div>
                                 <small class="text-muted">9 mins</small>
                             </div>

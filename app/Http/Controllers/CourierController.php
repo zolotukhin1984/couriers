@@ -31,7 +31,8 @@ class CourierController extends Controller
      */
     public function create()
     {
-        return view('couriers.create');
+        $title = 'Add new courier';
+        return view('couriers.create', ['title' => $title]);
     }
 
     /**
@@ -42,16 +43,18 @@ class CourierController extends Controller
      */
     public function store(Request $request)
     {
-//        return $request->all()['name'];
-//        die;
         $query = new Courier();
+        //вопрос: две следующие сторчки -- обращение к элементу?
         $query->name = $request->all()['name'];
         $query->surname = $request->all()['surname'];
         $query->slug = time();
         $query->save();
-        //dump($query);die;
-        //var_dump($query);die;
-        return view('couriers.index');
+
+        $couriers = Courier::all();
+
+        $title = 'Couriers list';
+
+        return view('couriers.index', ['couriers' => $couriers, 'title' => $title]);
     }
 
     /**

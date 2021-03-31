@@ -12,10 +12,4 @@ class Courier extends Model
     /**
      * @var integer
      */
-    public $id;
-
-//    /**
-//     * @var string
-//     */
-//    public $name;
 }
